@@ -24,10 +24,9 @@ class button extends Component {
         let { buttonClicked,counter } = this.state;
         return (
             <div>
+                <div id="body" >
 
-                <div id="body">
-
-                    <div id="dices">
+                    <div class="body">
                         <h1> {buttonClicked ? `Clicked ${counter} times`: `Hello`}</h1>
                     </div>
                 </div>

@@ -8,33 +8,44 @@ class App extends Component {
     this.state = {
       diceDisplay1: <i class="fa-solid fa-dice-one fa-2xl"></i>,
       diceDisplay2: <i class="fa-solid fa-dice-one fa-2xl"></i>,
-      roll : false,
+      roll: false,
       buttonClicked: false,
 
     };
   }
 
   onClickRollDice = () => {
-    const diceNumber2 = Math.floor(Math.random() * (6 + 1));
-
-    const diceNumber1 = Math.floor(Math.random() * (6 + 1));
-    console.log(diceNumber1, diceNumber2)
+    
+    let diceNumber2 = Math.floor(Math.random() * (6 + 1));
+    let diceNumber1 = Math.floor(Math.random() * (6 + 1));
     let diceDisplay1 = this.switchFunction(diceNumber1);
     let diceDisplay2 = this.switchFunction(diceNumber2);
     this.setState({
-      roll : true, 
+      roll: true,
       buttonClicked: true,
     });
-        // Reset rolling after the animation duration (1s in this example)
-        setTimeout(() => {
-          this.setState({
-            roll : false, 
-            diceDisplay1: diceDisplay1,
-            diceDisplay2: diceDisplay2,
-            buttonClicked: false
-          });
-        }, 1000);
 
+    let intervalId = setInterval(() =>{
+       diceNumber2 = Math.floor(Math.random() * (6 + 1));
+       diceNumber1 = Math.floor(Math.random() * (6 + 1));
+       diceDisplay1 = this.switchFunction(diceNumber1);
+       diceDisplay2 = this.switchFunction(diceNumber2);
+       console.log(diceNumber1)
+       this.setState({
+        diceDisplay1: diceDisplay1,
+        diceDisplay2: diceDisplay2,
+      }); 
+    }, 350);
+   
+    // Reset rolling after the animation duration (1s in this example)
+    setTimeout(() => {
+      clearInterval(intervalId);
+      this.setState({
+        roll: false,
+        buttonClicked: false
+      }); 
+
+    }, 2000);
   }
 
   switchFunction = (diceNumber = 1) => {
@@ -57,23 +68,21 @@ class App extends Component {
   }
   render() {
 
-    let { diceDisplay1, diceDisplay2,roll,buttonClicked } = this.state;
+    let { diceDisplay1, diceDisplay2, roll, buttonClicked } = this.state;
 
     return (
       <div >
         <div id="body">
 
           <div id="dices">
-            <h1 id={`dice1${roll ? `roll`:``}`}>{diceDisplay1}</h1> <h1 id={`dice2${roll ? `roll`:``}`}>{diceDisplay2}</h1>
+            <h1 id={`dice1${roll ? 'roll' : ''}`}>{diceDisplay1}</h1> <h1 id={`dice2${roll ? 'roll' : ''}`}>{diceDisplay2}</h1>
           </div>
         </div>
 
 
         <div id="buttons">
-            <button  id="button" onClick={this.onClickRollDice}>{buttonClicked ? "Rolling...":"Roll Dice"}</button>
-          </div>
-
-
+          <button id="button" onClick={this.onClickRollDice}>{buttonClicked ? 'Rolling...' : 'Roll Dice'}</button>
+        </div>
       </div>
     );
   }

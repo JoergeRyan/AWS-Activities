@@ -1,5 +1,17 @@
 #body{
-
+  display: flex;
+  margin: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.body{
+  margin-top: 20vh;
+  border: solid;
+  display: flex;
+  margin: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
 }
 .fa-2xl {
     font-size: 4em;
@@ -60,6 +72,6 @@
   
 
   #dice1roll,#dice2roll {
-    animation: rollAnimation 1s ease-in-out;
+    animation: rollAnimation 2s ease-in-out;
     transform: rotate(720deg);
   }
