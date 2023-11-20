@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+#body{
+
+}
+.fa-2xl {
+    font-size: 4em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#dices{
+    margin-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    height: 10vh; /* Adjust as needed */
+}
+
+#button{
+    font-size: 18px;
+    width: 120px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    margin: 10px; /* Optional: Adjust margin as needed */
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#dice1, #dice2, #dice1roll, #dice2roll{
+    margin: 5px;
+    size: 100px;
+
+  
+}
+
+@keyframes rollAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(180deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+    75% {
+      transform: rotate(540deg);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
   }
-}
+  
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  #dice1roll,#dice2roll {
+    animation: rollAnimation 1s ease-in-out;
+    transform: rotate(720deg);
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
