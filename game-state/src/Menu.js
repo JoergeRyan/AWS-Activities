@@ -14,9 +14,6 @@ class Menu extends Component {
             <nav>
                     
                         <Link to="/button" class = "buttonPractice">Button Practice App</Link>
-                  
-
-                    
                         <Link to="/App" class = "rollDiceApp">Roll Dice App</Link>
                    
 

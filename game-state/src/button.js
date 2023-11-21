@@ -12,9 +12,8 @@ class button extends Component {
     }
 
     onClick = () =>{
-        let counter = this.state.counter;
-        console.log(counter);
-        counter++;
+       
+        let counter = Math.floor(Math.random() * (999));
         this.setState({
             buttonClicked : true,
             counter : counter,
@@ -23,16 +22,18 @@ class button extends Component {
     render() {
         let { buttonClicked,counter } = this.state;
         return (
-            <div>
+            <div id="full">
+
                 <div id="body" >
 
-                    <div class="body">
-                        <h1> {buttonClicked ? `Clicked ${counter} times`: `Hello`}</h1>
+                    <div class="body" >
+                        
+                        <h1 draggable="true" > {buttonClicked ? `The Number is ${counter} `: `Hello`}</h1>
                     </div>
                 </div>
 
 
-                <div id="buttons">
+                <div id="buttons" >
                     <button id="button" onClick={this.onClick}>{buttonClicked ? `Clicked`:`Click Me`}</button>
                 </div>
 

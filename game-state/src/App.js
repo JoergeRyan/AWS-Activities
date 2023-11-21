@@ -71,7 +71,7 @@ class App extends Component {
     let { diceDisplay1, diceDisplay2, roll, buttonClicked } = this.state;
 
     return (
-      <div >
+      <div id="full">
         <div id="body">
 
           <div id="dices">

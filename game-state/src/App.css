@@ -1,10 +1,21 @@
+#full{
+  /* background: linear-gradient(113.5deg, rgb(234, 234, 234) 22.3%, rgb(201, 234, 211) 56.6%, rgb(255, 180, 189) 90.9%); */
+  background-image: url('./BackGroundImage/peakpx.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 90vb;
+}
+
 #body{
+  
   display: flex;
   margin: wrap;
   align-items: center;
   justify-content: center;
 }
 .body{
+  color: wheat;
   margin-top: 20vh;
   border: solid;
   display: flex;
@@ -15,6 +26,7 @@
 }
 .fa-2xl {
     font-size: 4em;
+    color: wheat;
 }
 
 #dices{
@@ -37,8 +49,8 @@
     width: 120px; /* Adjust as needed */
     height: 40px; /* Adjust as needed */
     margin: 10px; /* Optional: Adjust margin as needed */
-    background-color: black;
-    color: #fff;
+    background-color: wheat;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
